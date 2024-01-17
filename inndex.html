@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #136c87;
+        }
+
+        .heart-container {
+            perspective: 10000px;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            transform-style: preserve-3d;
+            transform: rotateY(45deg);
+            animation: sisan 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 52px;
+            height: 80px;
+            border-radius: 50%;
+            background: #7b0c0c;
+        }
+
+        .heart::before {
+            
+            left: 50px;
+        }
+
+        .heart::after {
+            left: 0px;
+        }
+
+        @keyframes sisan {
+            0%, 20%, 50%, 80%, 100% {
+                transform: scale(1);
+            }
+            40% {
+                transform: scale(0.6);
+            }
+            60% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+</body>
+</html>
